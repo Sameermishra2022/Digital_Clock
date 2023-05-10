@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(255, 0, 115),blue);
+    animation: animate 5s ease-in-out infinite;
+}
+body::after{
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    width: 270px;
+    height: 270px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(0, 255, 51),rgb(255, 0, 85));
+    animation: animate 5s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+@keyframes animate{
+    0%,100%{
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+.clock{
+    position: relative;
+    width: 700px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.158);
+    box-shadow: 0 15p 25px rgba(255, 255, 255, 0.219);
+    z-index: 1000;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.029);
+    backdrop-filter: blur(20px);
+}
+.clock .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.clock .container h2{
+    font-size: 6em;
+    color: rgb(255, 255, 255);
+}
+.clock .container h2:nth-child(odd)
+{
+    padding: 5px 15px ;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0);
+    margin: 0 10px;
+    border-bottom: 1px solid rgb(50, 47, 47);
+    border-right: 1px solid rgb(54, 47, 47);
+}
+.clock .container h2#hour{
+    color: rgb(255, 98, 0);
+}
+.clock .container h2#minute{
+    color: rgb(255, 0, 102);
+}
+.clock .container h2#second{
+    color: rgb(38, 0, 255);
+}
+#ampm{
+    position: relative;
+    top: -50px;
+    font-size: 2em;
+    color: white;
+    font-size: 700;
+}
